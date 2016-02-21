@@ -130,13 +130,10 @@
 	    (add-to-list 'TeX-command-list '("XeLaTeX" "%`xelatex --synctex=1%(mode)%' %t" TeX-run-TeX nil t))	    
 	    (setq TeX-command-default "XeLaTeX")
 	    (setq TeX-save-query  nil )
-	    (setq TeX-show-compilation t)
-	    (TeX-source-correlate-mode 1)
-	    (setq TeX-source-correlate-method 'synctex)
-	    ))
+	    (setq TeX-show-compilation t)))
 
-;(add-hook 'LaTeX-mode-hook 'TeX-source-correlate-mode)
-;(setq TeX-source-correlate-method 'synctex)
+(add-hook 'LaTeX-mode-hook 'TeX-source-correlate-mode)
+(setq TeX-source-correlate-method 'synctex)
 
 (when *is-a-mac*
     (add-hook 'LaTeX-mode-hook
@@ -205,10 +202,6 @@
 	))
 ;(yas-global-mode 1)
 (yas-reload-all)
-
-
-
-
 
 
 ;; start emacs in server mode so that skim can talk to it
