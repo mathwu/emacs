@@ -38,7 +38,8 @@
 (defvar snippet-path (concat yas-path "/yasnippet"))
 
 (add-to-list 'load-path plugin-path)
-(add-to-list 'load-path theme-path)
+(add-to-list 'custom-theme-load-path theme-path)
+;(add-to-list 'load-path theme-path)
 (add-to-list 'load-path snippet-path)
 (add-to-list 'load-path yas-path)
 
