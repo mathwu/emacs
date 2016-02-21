@@ -30,19 +30,27 @@
   (setq package-user-dir "~/Onedrive/emacs/elpa")
   (defvar base-path "~/.emacs.d"))
 
-
+(defvar lisp-path (concat base-path "/lisp"))
 (defvar plugin-path (concat base-path "/plugins"))
+(defvar elpa-path (concat base-path "/elpa"))
+(defvar org-path (concat plugin-path "/org-mode"))
 (defvar my-snippet-path (concat base-path "/snippets"))
 (defvar theme-path (concat base-path "/themes"))
-(defvar yas-path (concat plugin-path "/yasnippet"))
-(defvar snippet-path (concat yas-path "/yasnippet"))
+;(defvar yas-path (concat plugin-path "/yasnippet"))
+;(defvar snippet-path (concat yas-path "/snippets"))
 
+(add-to-list 'load-path lisp-path)
 (add-to-list 'load-path plugin-path)
 (add-to-list 'custom-theme-load-path theme-path)
 ;(add-to-list 'load-path theme-path)
-(add-to-list 'load-path snippet-path)
-(add-to-list 'load-path yas-path)
+;(add-to-list 'load-path snippet-path)
+(add-to-list 'load-path my-snippet-path)
 
+(setq package-user-dir elpa-path)
+
+;(add-hook 'after-init-hook #'(lambda () (load "init-elpa")))
+
+(require 'init-elpa)
 
 ;;----------------------------------------------------------------------------
 ;; font settings
@@ -191,17 +199,20 @@
 
 
 ;;----------------------------------------------------------------------------
-;; snippets
+;; yasnippets
 ;;----------------------------------------------------------------------------
-
-;;(require 'cl-lib)
+;(require 'cl-lib)
 (require 'yasnippet)
 (setq yas-snippet-dirs
-      '(snippet-path
-	my-snippet-path            ;; personal snippets
+      '(my-snippet-path            ;; personal snippets
 	))
-;(yas-global-mode 1)
+(yas-global-mode 1)
 (yas-reload-all)
+
+
+
+
+
 
 
 ;; start emacs in server mode so that skim can talk to it
