@@ -127,6 +127,7 @@
 ;;----------------------------------------------------------------------------
 ;; LaTeX
 ;;----------------------------------------------------------------------------
+
 (load "auctex.el" nil t t)
 (load "preview-latex.el" nil t t)
 (require 'tex-mik)
@@ -212,32 +213,13 @@
 (yas-global-mode 1)
 (yas-reload-all)
 
-
-
-
-
-
-
 ;; start emacs in server mode so that skim can talk to it
 (require 'server)
 (unless (server-running-p)
   (server-start))
 
-(custom-set-variables
- ;; custom-set-variables was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(custom-safe-themes
-   (quote
-    ("3c83b3676d796422704082049fc38b6966bcad960f896669dfc21a7a37a748fa" default))))
-(custom-set-faces
- ;; custom-set-faces was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- )
- ;; Local Variables:
+
+;; Local Variables:
 ;; coding: utf-8
 ;; no-byte-compile: t
 ;; End:
