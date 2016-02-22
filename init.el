@@ -20,7 +20,6 @@
   (setq package-user-dir "D:/OneDrive/emacs/elpa")
   (defvar base-path "D:/emacs"))
 
-
 (when *is-a-mac*
   (setq path "/opt/local/bin:/opt/local/sbin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin")
   (setenv "PATH" path)
@@ -42,14 +41,11 @@
 (add-to-list 'load-path lisp-path)
 (add-to-list 'load-path plugin-path)
 (add-to-list 'custom-theme-load-path theme-path)
-;(add-to-list 'load-path theme-path)
+(add-to-list 'load-path theme-path)
 ;(add-to-list 'load-path snippet-path)
 (add-to-list 'load-path my-snippet-path)
 
 (setq package-user-dir elpa-path)
-
-;(add-hook 'after-init-hook #'(lambda () (load "init-elpa")))
-
 (require 'init-elpa)
 
 ;;----------------------------------------------------------------------------
@@ -63,7 +59,6 @@
     (set-fontset-font (frame-parameter nil 'font)
 		      charset
 		      (font-spec :family "Hiragion Sans" :size 20))))
-
 
 (when *is-a-win*
   ;; English font
@@ -80,13 +75,17 @@
 ;;----------------------------------------------------------------------------
 ;; themes
 ;;----------------------------------------------------------------------------
-(load-theme 'zenburn t)
 
+;(load-theme 'solarized-dark t)
+;(load-theme 'zenburn t)
+(load-theme 'dracula t)
 
+(sml/setup)
 
 ;;----------------------------------------------------------------------------
 ;; style of the buffer
 ;;----------------------------------------------------------------------------
+
 (set-scroll-bar-mode nil)
 (setq column-number-mode t)
 (setq line-number-mode t)
@@ -97,6 +96,12 @@
 (display-time-mode t)
 (setq display-time-24hr-format t)
 
+;(require 'powerline)
+;(powerline-default-theme)
+;(powerline-center-theme)
+;(powerline-center-evil-theme)
+;(powerline-vim-theme)
+;(powerline-nano-theme)
 
 ;;----------------------------------------------------------------------------
 ;; spell check

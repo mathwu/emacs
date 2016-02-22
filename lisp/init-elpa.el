@@ -15,7 +15,12 @@
 			      yasnippet
 			      auto-complete
 			      org
-			      color-theme-zenburn))
+			      smart-mode-line
+			      powerline
+			      color-theme-zenburn
+			      solarized-theme
+			      dracula-theme
+			      dash))
 (dolist (p my-default-packages)
   (when (not (package-installed-p p))
     (package-install p)))
