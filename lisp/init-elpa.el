@@ -26,4 +26,3 @@
     (package-install p)))
 
 (provide 'init-elpa)
-

@@ -1,5 +1,7 @@
 ;; coding information
 (prefer-coding-system 'utf-8)
+(setq user-full-name "Senlin Wu")
+(setq user-mail-address "wusenlin@outlook.com")
 
 ;;----------------------------------------------------------------------------
 ;; basic definitions
@@ -39,6 +41,8 @@
 (add-to-list 'custom-theme-load-path theme-path)
 (add-to-list 'load-path theme-path)
 (add-to-list 'load-path my-snippet-path)
+(add-to-list 'load-path (concat org-path "lisp"))
+(add-to-list 'load-path (concat org-path "/contrib/lisp"))
 
 (setq package-user-dir elpa-path)
 (require 'init-elpa)
@@ -196,6 +200,45 @@
 	))
 (yas-global-mode 1)
 (yas-reload-all)
+
+;;----------------------------------------------------------------------------
+;; asymptote
+;;----------------------------------------------------------------------------
+(autoload 'asy-mode "asy-mode.el" "Asymptote major mode." t)
+(autoload 'lasy-mode "asy-mode.el" "hybrid Asymptote/Latex major mode." t)
+(autoload 'asy-insinuate-latex "asy-mode.el" "Asymptote insinuate LaTeX." t)
+(add-to-list 'auto-mode-alist '("\\.asy$" . asy-mode))
+
+
+
+
+;;----------------------------------------------------------------------------
+;; org-mode
+;;----------------------------------------------------------------------------
+
+(require 'org-install)
+;(require 'org-latex)
+;(require 'ox-latex)
+;; The following lines are always needed. Choose your own keys.
+(add-to-list 'auto-mode-alist '("\\.org\\'" . org-mode)) ; not needed since Emacs 22.2
+(add-hook 'org-mode-hook 'turn-on-font-lock) ; not needed when global-font-lock-mode is on
+(global-set-key "\C-cl" 'org-store-link)
+(global-set-key "\C-cc" 'org-capture)
+(global-set-key "\C-ca" 'org-agenda)
+(global-set-key "\C-cb" 'org-iswitchb)
+
+
+;;----------------------------------------------------------------------------
+;;markdown mode
+;;----------------------------------------------------------------------------
+(autoload 'markdown-mode "markdown-mode"
+   "Major mode for editing Markdown files" t)
+(add-to-list 'auto-mode-alist '("\\.text\\'" . markdown-mode))
+(add-to-list 'auto-mode-alist '("\\.markdown\\'" . markdown-mode))
+(add-to-list 'auto-mode-alist '("\\.md\\'" . markdown-mode))
+
+
+
 
 ;; start emacs in server mode so that skim can talk to it
 (require 'server)
