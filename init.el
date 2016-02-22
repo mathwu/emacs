@@ -77,8 +77,11 @@
 ;;----------------------------------------------------------------------------
 
 ;(load-theme 'solarized-dark t)
-(load-theme 'zenburn t)
+;(load-theme 'zenburn t)
 ;(load-theme 'dracula t)
+
+(require 'color-theme-sanityinc-tomorrow)
+(load-theme 'sanityinc-tomorrow-night t)
 
 ;;----------------------------------------------------------------------------
 ;; style of the buffer

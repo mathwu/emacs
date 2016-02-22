@@ -16,6 +16,7 @@
 			      auto-complete
 			      org
 			      zenburn-theme
+			      color-theme-sanityinc-tomorrow
 			      solarized-theme
 			      dracula-theme
 			      ))
