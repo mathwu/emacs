@@ -15,24 +15,22 @@
 ;;----------------------------------------------------------------------------
 (when *is-a-win*
   (add-to-list 'load-path "C:/emacs/share/emacs/site-lisp")
-  (setq command-line-default-directory "D:/OneDrive/work")
-  (setq default-directory "D:/OneDrive/work")
-  (setq package-user-dir "D:/OneDrive/emacs/elpa")
+  (setq command-line-default-directory "D:/work")
+  (setq default-directory "D:/work")
   (defvar base-path "D:/emacs"))
 
 (when *is-a-mac*
   (setq path "/opt/local/bin:/opt/local/sbin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin")
   (setenv "PATH" path)
-  (setq command-line-default-directory "~/OneDrive/")
-  (setq default-directory "~/Onedrive/")
+  (setq command-line-default-directory "~/work/")
+  (setq default-directory "~/work/")
   (add-to-list 'load-path "/opt/local/share/emacs/site-lisp/")
-  (setq package-user-dir "~/Onedrive/emacs/elpa")
   (defvar base-path "~/.emacs.d"))
 
 (defvar lisp-path (concat base-path "/lisp"))
 (defvar plugin-path (concat base-path "/plugins"))
 (defvar elpa-path (concat base-path "/elpa"))
-(defvar org-path (concat plugin-path "/org-mode"))
+(defvar org-path (concat base-path "/org"))
 (defvar my-snippet-path (concat base-path "/snippets"))
 (defvar theme-path (concat base-path "/themes"))
 
@@ -41,8 +39,12 @@
 (add-to-list 'custom-theme-load-path theme-path)
 (add-to-list 'load-path theme-path)
 (add-to-list 'load-path my-snippet-path)
-(add-to-list 'load-path (concat org-path "lisp"))
-(add-to-list 'load-path (concat org-path "/contrib/lisp"))
+
+(setq load-path (cons (concat org-path "/lisp") load-path))
+(setq load-path (cons (concat org-path "/contrib/lisp") load-path))
+
+;(add-to-list 'load-path (concat org-path "lisp"))
+;(add-to-list 'load-path (concat org-path "/contrib/lisp"))
 
 (setq package-user-dir elpa-path)
 (require 'init-elpa)
@@ -74,14 +76,17 @@
 ;;----------------------------------------------------------------------------
 ;; themes
 ;;----------------------------------------------------------------------------
+
 (setq solarized-termcolors 256)
 (setq solarized-broken-srgb t)
 (load-theme 'solarized t)
+(set-frame-parameter nil 'background-mode 'dark)
+(enable-theme 'solarized)
+
 ;(load-theme 'zenburn t)
 ;(load-theme 'dracula t)
 
-(set-frame-parameter nil 'background-mode 'dark)
-(enable-theme 'solarized)
+
 
 ;(require 'color-theme-sanityinc-tomorrow)
 ;(load-theme 'sanityinc-tomorrow-night t)
@@ -125,8 +130,17 @@
 (setq TeX-auto-save t)
 (setq TeX-parse-self t)
 (setq-default TeX-master nil)
-(setq reftex-plug-into-AUCTeX t)
 (setq TeX-PDF-mode t)
+
+(add-hook 'LaTeX-mode-hook 'turn-on-reftex) ; with AUCTeX LaTeX mode
+(add-hook 'latex-mode-hook 'turn-on-reftex) ; with Emacs latex mode
+
+(setq reftex-plug-into-AUCTeX t)
+(setq reftex-enable-partial-scans t)
+(setq reftex-save-parse-info t)
+(setq reftex-use-multiple-selection-buffers t)
+
+
 (add-hook 'LaTeX-mode-hook 
 	  (lambda()
 ;	    (add-to-list 'TeX-command-list '("XeLaTeX" "%`xelatex%(mode)%' %t" TeX-run-TeX nil t))
@@ -187,8 +201,7 @@
   (add-hook hook
             (lambda ()
 ;	      (outline-minor-mode 1)
-	      (cdlatex-mode 1)
-	      (reftex-mode 1))))
+	      (cdlatex-mode 1))))
 
 ;;----------------------------------------------------------------------------
 ;; yasnippets
