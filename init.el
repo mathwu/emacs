@@ -1,14 +1,12 @@
 ;; coding information
 (prefer-coding-system 'utf-8)
 
-
 ;;----------------------------------------------------------------------------
 ;; basic definitions
 ;;----------------------------------------------------------------------------
 (defconst *spell-check-support-enabled* nil) ;; Enable with t if you prefer
 (defconst *is-a-mac* (eq system-type 'darwin))
 (defconst *is-a-win* (eq system-type 'windows-nt))
-
 
 ;;----------------------------------------------------------------------------
 ;; set directories
@@ -35,14 +33,11 @@
 (defvar org-path (concat plugin-path "/org-mode"))
 (defvar my-snippet-path (concat base-path "/snippets"))
 (defvar theme-path (concat base-path "/themes"))
-;(defvar yas-path (concat plugin-path "/yasnippet"))
-;(defvar snippet-path (concat yas-path "/snippets"))
 
 (add-to-list 'load-path lisp-path)
 (add-to-list 'load-path plugin-path)
 (add-to-list 'custom-theme-load-path theme-path)
 (add-to-list 'load-path theme-path)
-;(add-to-list 'load-path snippet-path)
 (add-to-list 'load-path my-snippet-path)
 
 (setq package-user-dir elpa-path)
@@ -75,13 +70,17 @@
 ;;----------------------------------------------------------------------------
 ;; themes
 ;;----------------------------------------------------------------------------
-
-;(load-theme 'solarized-dark t)
+(setq solarized-termcolors 256)
+(setq solarized-broken-srgb t)
+(load-theme 'solarized t)
 ;(load-theme 'zenburn t)
 ;(load-theme 'dracula t)
 
-(require 'color-theme-sanityinc-tomorrow)
-(load-theme 'sanityinc-tomorrow-night t)
+(set-frame-parameter nil 'background-mode 'dark)
+(enable-theme 'solarized)
+
+;(require 'color-theme-sanityinc-tomorrow)
+;(load-theme 'sanityinc-tomorrow-night t)
 
 ;;----------------------------------------------------------------------------
 ;; style of the buffer
@@ -90,19 +89,12 @@
 (set-scroll-bar-mode nil)
 (setq column-number-mode t)
 (setq line-number-mode t)
-;(setq inhibit-startup-message t)
+(global-linum-mode 1)
 (setq gnus-inhibit-startup-message t) 
 (setq initial-frame-alist '((width . 60) (height . 30)))
 (setq track-eol t)
 (display-time-mode t)
 (setq display-time-24hr-format t)
-
-;(require 'powerline)
-;(powerline-default-theme)
-;(powerline-center-theme)
-;(powerline-center-evil-theme)
-;(powerline-vim-theme)
-;(powerline-nano-theme)
 
 ;;----------------------------------------------------------------------------
 ;; spell check
@@ -112,20 +104,12 @@
   (setq-default ispell-local-dictionary "american")
   (global-set-key (kbd "") 'ispell-complete-word))
 
-
-
 ;;----------------------------------------------------------------------------
 ;; CDLaTeX
 ;;----------------------------------------------------------------------------
 
 (autoload 'cdlatex-mode "cdlatex" "CDLaTeX Mode" t)
 (autoload 'turn-on-cdlatex "cdlatex" "CDLaTeX Mode" nil)
-
-;(add-hook 'LaTeX-mode-hook 'turn-on-cdlatex)   ; with AUCTeX LaTeX mode
-;(add-hook 'latex-mode-hook 'turn-on-cdlatex)   ; with Emacs latex mode
-;(add-hook 'org-mode-hook 'turn-on-cdlatex)
-
-
 
 ;;----------------------------------------------------------------------------
 ;; LaTeX
@@ -180,7 +164,6 @@
    '(preview-scale-function 1.3)
    '(preview-transparent-color nil)))
 
-
 ;;----------------------------------------------------------------------------
 ;; more hooks
 ;;----------------------------------------------------------------------------
@@ -203,8 +186,6 @@
 	      (cdlatex-mode 1)
 	      (reftex-mode 1))))
 
-
-
 ;;----------------------------------------------------------------------------
 ;; yasnippets
 ;;----------------------------------------------------------------------------
@@ -226,10 +207,3 @@
 ;; coding: utf-8
 ;; no-byte-compile: t
 ;; End:
-
-
-
-
-
-
-

@@ -11,13 +11,14 @@
   (package-refresh-contents))
  
 ;; setting default package to be installed
-(defvar my-default-packages '(auctex
+(defvar my-default-packages '(dash
+			      auctex
 			      yasnippet
 			      auto-complete
 			      org
 			      zenburn-theme
+			      powerline
 			      color-theme-sanityinc-tomorrow
-			      solarized-theme
 			      dracula-theme
 			      ))
 (dolist (p my-default-packages)
