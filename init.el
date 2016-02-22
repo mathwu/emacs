@@ -77,13 +77,7 @@
 ;; themes
 ;;----------------------------------------------------------------------------
 
-(setq solarized-termcolors 256)
-(setq solarized-broken-srgb t)
-(load-theme 'solarized t)
-(set-frame-parameter nil 'background-mode 'dark)
-(enable-theme 'solarized)
-
-;(load-theme 'zenburn t)
+(load-theme 'zenburn t)
 ;(load-theme 'dracula t)
 
 
