@@ -77,8 +77,8 @@
 ;;----------------------------------------------------------------------------
 
 ;(load-theme 'solarized-dark t)
-;(load-theme 'zenburn t)
-(load-theme 'dracula t)
+(load-theme 'zenburn t)
+;(load-theme 'dracula t)
 
 ;;----------------------------------------------------------------------------
 ;; style of the buffer
@@ -170,7 +170,7 @@
    '(TeX-engine (quote xetex))
    '(TeX-source-correlate-method (quote synctex))
    '(TeX-view-predicate-list nil)
-   '(TeX-view-program-list (quote (("sumatrapdf" "D:/OneDrive/emacs/sumatrapdf.exe %o"))))
+   '(TeX-view-program-list (quote (("sumatrapdf" "D:/emacs/sumatrapdf.exe %o"))))
    '(TeX-view-program-selection (quote ((output-pdf "sumatrapdf") (output-html "start"))))
    '(preview-auto-cache-preamble nil)
    '(preview-scale-function 1.3)

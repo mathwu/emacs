@@ -15,7 +15,7 @@
 			      yasnippet
 			      auto-complete
 			      org
-			      color-theme-zenburn
+			      zenburn-theme
 			      solarized-theme
 			      dracula-theme
 			      ))
