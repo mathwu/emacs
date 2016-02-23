@@ -244,13 +244,6 @@
 (add-to-list 'auto-mode-alist '("\\.markdown\\'" . markdown-mode))
 (add-to-list 'auto-mode-alist '("\\.md\\'" . markdown-mode))
 
-;;----------------------------------------------------------------------------
-;; magit
-;;----------------------------------------------------------------------------
-(global-set-key (kbd "C-x g") 'magit-status)
-
-
-
 ;; start emacs in server mode so that skim can talk to it
 (require 'server)
 (unless (server-running-p)
