@@ -82,16 +82,20 @@
 		      (font-spec :family "Microsoft YaHei" :size 20))))
 
 (global-font-lock-mode t) 
-(setq font-lock-maximum-decoration t)
+;(setq font-lock-maximum-decoration t)
 
 ;;----------------------------------------------------------------------------
 ;; themes
 ;;----------------------------------------------------------------------------
 
 (load-theme 'zenburn t)
-;(load-theme 'dracula t)
 
-
+;(setq solarized-termcolors 16)
+;(setq solarized-broken-srgb t)
+;(load-theme 'solarized t)
+;(set-frame-parameter nil 'background-mode 'dark)
+;(set-terminal-parameter nil 'background-mode 'dark)
+;(enable-theme 'solarized)
 
 ;(require 'color-theme-sanityinc-tomorrow)
 ;(load-theme 'sanityinc-tomorrow-night t)

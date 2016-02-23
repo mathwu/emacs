@@ -18,7 +18,7 @@
 			      auto-complete
 			      org
 			      zenburn-theme
-			      solarized-theme
+			      color-theme-solarized
 			      powerline
 			      color-theme-sanityinc-tomorrow
 			      dracula-theme
