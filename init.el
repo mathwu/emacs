@@ -1,4 +1,6 @@
 ;; coding information
+(set-terminal-coding-system 'utf-8)
+(set-keyboard-coding-system 'utf-8)
 (prefer-coding-system 'utf-8)
 (setq user-full-name "Senlin Wu")
 (setq user-mail-address "wusenlin@outlook.com")
@@ -53,13 +55,22 @@
 ;; font settings
 ;;----------------------------------------------------------------------------
 (when *is-a-mac*
-  ;; English font
-  (set-face-attribute 'default nil :font "Dejavu Sans Mono 18")
-  ;; Chinese font
-  (dolist (charset '(kana han symbol cjk-misc bopomofo))
-    (set-fontset-font (frame-parameter nil 'font)
-		      charset
-		      (font-spec :family "Hiragion Sans" :size 20))))
+  (defun s-font()
+    (interactive)
+    ;; English font
+    (set-face-attribute 'default nil :font "Dejavu Sans Mono 18")
+    ;; Chinese font
+    (dolist (charset '(kana han symbol cjk-misc bopomofo))
+      (set-fontset-font (frame-parameter nil 'font)
+			charset
+			(font-spec :family "Hiragion Sans" :size 20))))
+  (add-to-list 'after-make-frame-functions
+		 (lambda (new-frame)
+		   (select-frame new-frame)
+		   (if window-system
+		       (s-font))))
+  (if window-system
+      (s-font)))
 
 (when *is-a-win*
   ;; English font
