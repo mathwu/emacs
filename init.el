@@ -244,6 +244,10 @@
 (add-to-list 'auto-mode-alist '("\\.markdown\\'" . markdown-mode))
 (add-to-list 'auto-mode-alist '("\\.md\\'" . markdown-mode))
 
+;;----------------------------------------------------------------------------
+;; magit
+;;----------------------------------------------------------------------------
+(global-set-key (kbd "C-x g") 'magit-status)
 
 
 
