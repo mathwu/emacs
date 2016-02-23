@@ -24,7 +24,7 @@
 (when *is-a-mac*
   (setq path "/opt/local/bin:/opt/local/sbin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin")
   (setenv "PATH" path)
-  (setq command-line-default-directory "~/work/")
+;  (setq command-line-default-directory "~/work/")
   (setq default-directory "~/work/")
   (add-to-list 'load-path "/opt/local/share/emacs/site-lisp/")
   (defvar base-path "~/.emacs.d"))
