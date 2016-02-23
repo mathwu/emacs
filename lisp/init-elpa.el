@@ -12,6 +12,7 @@
  
 ;; setting default package to be installed
 (defvar my-default-packages '(dash
+			      magit
 			      auctex
 			      yasnippet
 			      auto-complete
