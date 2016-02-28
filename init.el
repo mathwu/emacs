@@ -35,12 +35,14 @@
 (defvar org-path (concat base-path "/org"))
 (defvar my-snippet-path (concat base-path "/snippets"))
 (defvar theme-path (concat base-path "/themes"))
+(defvar cfs-profiles-directory (concat base-path "/chinese-fonts-setup"))
 
 (add-to-list 'load-path lisp-path)
 (add-to-list 'load-path plugin-path)
 (add-to-list 'custom-theme-load-path theme-path)
 (add-to-list 'load-path theme-path)
 (add-to-list 'load-path my-snippet-path)
+(add-to-list 'load-path cfs-profiles-directory)
 
 (setq load-path (cons (concat org-path "/lisp") load-path))
 (setq load-path (cons (concat org-path "/contrib/lisp") load-path))
@@ -56,6 +58,7 @@
 ;;----------------------------------------------------------------------------
 (require 'chinese-fonts-setup)
 (setq cfs-profiles
+<<<<<<< HEAD
     '("mac" "win" "linux"))
 (when *is-a-mac*
   (defun s-font()
@@ -74,15 +77,21 @@
 		       (s-font))))
   (if window-system
       (s-font)))
+=======
+      '("mac" "win" "linux"))
+(when *is-a-mac*
+  (custom-set-variables
+   '(cfs--current-profile-name "mac" t)
+   '(cfs--fontsize-steps (quote (7 4 4)) t)))
+
+>>>>>>> testing
 
 (when *is-a-win*
-  ;; English font
-  (set-face-attribute 'default nil :font "Consolas 18")
-  ;; Chinses font
-  (dolist (charset '(kana han symbol cjk-misc bopomofo))
-    (set-fontset-font (frame-parameter nil 'font)
-		      charset
-		      (font-spec :family "Microsoft YaHei" :size 20))))
+  (custom-set-variables
+   '(cfs--current-profile-name "win" t)
+   '(cfs--fontsize-steps (quote (4 4 4)) t)))
+
+
 
 (global-font-lock-mode t) 
 ;(setq font-lock-maximum-decoration t)
@@ -93,16 +102,6 @@
 
 (load-theme 'zenburn t)
 
-;(setq solarized-termcolors 16)
-;(setq solarized-broken-srgb t)
-;(load-theme 'solarized t)
-;(set-frame-parameter nil 'background-mode 'dark)
-;(set-terminal-parameter nil 'background-mode 'dark)
-;(enable-theme 'solarized)
-
-;(require 'color-theme-sanityinc-tomorrow)
-;(load-theme 'sanityinc-tomorrow-night t)
-
 ;;----------------------------------------------------------------------------
 ;; style of the buffer
 ;;----------------------------------------------------------------------------
@@ -112,7 +111,7 @@
 (setq line-number-mode t)
 (global-linum-mode 1)
 (setq gnus-inhibit-startup-message t) 
-(setq initial-frame-alist '((width . 60) (height . 30)))
+(setq initial-frame-alist '((width . 120) (height . 90)))
 (setq track-eol t)
 (display-time-mode t)
 (setq display-time-24hr-format t)
@@ -275,6 +274,10 @@
 
 
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> testing
 ;; Local Variables:
 ;; coding: utf-8
 ;; no-byte-compile: t
