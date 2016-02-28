@@ -220,7 +220,7 @@
 
 (require 'org-install)
 ;(require 'org-latex)
-;(require 'ox-latex)
+(require 'ox-latex)
 ;; The following lines are always needed. Choose your own keys.
 (add-to-list 'auto-mode-alist '("\\.org\\'" . org-mode)) ; not needed since Emacs 22.2
 (add-hook 'org-mode-hook 'turn-on-font-lock) ; not needed when global-font-lock-mode is on
@@ -229,6 +229,17 @@
 (global-set-key "\C-ca" 'org-agenda)
 (global-set-key "\C-cb" 'org-iswitchb)
 
+
+(setq org-latex-pdf-process '("xelatex -interaction nonstopmode %f"
+                               "xelatex -interaction nonstopmode %f"))
+(add-to-list 'org-latex-classes
+	     '("ctexbook"
+	      "\\documentclass[fontset=none,UTF8,a4paper,zihao=-4]{ctexbook}"
+	      ("\\part{%s}" . "\\part*{%s}")
+	      ("\\chapter{%s}" . "\\chapter*{%s}")
+	      ("\\section{%s}" . "\\section*{%s}")
+	      ("\\subsection{%s}" . "\\subsection*{%s}")
+	      ("\\subsubsection{%s}" . "\\subsubsection*{%s}")))
 
 ;;----------------------------------------------------------------------------
 ;;markdown mode
