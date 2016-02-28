@@ -89,7 +89,7 @@
 (setq line-number-mode t)
 (global-linum-mode 1)
 (setq gnus-inhibit-startup-message t) 
-(setq initial-frame-alist '((width . 120) (height . 90)))
+(setq initial-frame-alist '((width . 120) (height . 60)))
 (setq track-eol t)
 (display-time-mode t)
 (setq display-time-24hr-format t)
