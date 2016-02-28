@@ -12,6 +12,7 @@
  
 ;; setting default package to be installed
 (defvar my-default-packages '(dash
+			      chinese-fonts-setup
 			      magit
 			      auctex
 			      yasnippet

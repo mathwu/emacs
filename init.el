@@ -54,32 +54,13 @@
 ;;----------------------------------------------------------------------------
 ;; font settings
 ;;----------------------------------------------------------------------------
+(require 'chinese-fonts-setup)
+(setq cfs-profiles
+      '("mac" "win" "linux"))
 (when *is-a-mac*
-  (defun s-font()
-    (interactive)
-    ;; English font
-    (set-face-attribute 'default nil :font "Dejavu Sans Mono 18")
-    ;; Chinese font
-    (dolist (charset '(kana han symbol cjk-misc bopomofo))
-      (set-fontset-font (frame-parameter nil 'font)
-			charset
-			(font-spec :family "Hiragion Sans" :size 20))))
-  (add-to-list 'after-make-frame-functions
-		 (lambda (new-frame)
-		   (select-frame new-frame)
-		   (if window-system
-		       (s-font))))
-  (if window-system
-      (s-font)))
-
-(when *is-a-win*
-  ;; English font
-  (set-face-attribute 'default nil :font "Consolas 18")
-  ;; Chinses font
-  (dolist (charset '(kana han symbol cjk-misc bopomofo))
-    (set-fontset-font (frame-parameter nil 'font)
-		      charset
-		      (font-spec :family "Microsoft YaHei" :size 20))))
+  (custom-set-variables
+   '(cfs--current-profile-name "mac" t)
+   '(cfs--fontsize-steps (quote (6 4 4)) t)))
 
 (global-font-lock-mode t) 
 (setq font-lock-maximum-decoration t)
@@ -265,6 +246,8 @@
 (require 'server)
 (unless (server-running-p)
   (server-start))
+
+
 
 
 ;; Local Variables:
