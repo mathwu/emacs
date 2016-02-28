@@ -13,10 +13,6 @@
 ;; setting default package to be installed
 (defvar my-default-packages '(dash
 			      chinese-fonts-setup
-<<<<<<< HEAD
-			      magit
-=======
->>>>>>> testing
 			      auctex
 			      yasnippet
 			      auto-complete
