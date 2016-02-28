@@ -35,12 +35,14 @@
 (defvar org-path (concat base-path "/org"))
 (defvar my-snippet-path (concat base-path "/snippets"))
 (defvar theme-path (concat base-path "/themes"))
+(defvar cfs-profiles-directory (concat base-path "/chinese-fonts-setup"))
 
 (add-to-list 'load-path lisp-path)
 (add-to-list 'load-path plugin-path)
 (add-to-list 'custom-theme-load-path theme-path)
 (add-to-list 'load-path theme-path)
 (add-to-list 'load-path my-snippet-path)
+(add-to-list 'load-path cfs-profiles-directory)
 
 (setq load-path (cons (concat org-path "/lisp") load-path))
 (setq load-path (cons (concat org-path "/contrib/lisp") load-path))
@@ -61,6 +63,14 @@
   (custom-set-variables
    '(cfs--current-profile-name "mac" t)
    '(cfs--fontsize-steps (quote (6 4 4)) t)))
+
+
+(when *is-a-win*
+  (custom-set-variables
+   '(cfs--current-profile-name "win" t)
+   '(cfs--fontsize-steps (quote (4 4 4)) t)))
+
+
 
 (global-font-lock-mode t) 
 ;(setq font-lock-maximum-decoration t)

@@ -13,16 +13,11 @@
 ;; setting default package to be installed
 (defvar my-default-packages '(dash
 			      chinese-fonts-setup
-			      magit
 			      auctex
 			      yasnippet
 			      auto-complete
 			      org
 			      zenburn-theme
-			      color-theme-solarized
-			      powerline
-			      color-theme-sanityinc-tomorrow
-			      dracula-theme
 			      ))
 (dolist (p my-default-packages)
   (when (not (package-installed-p p))
