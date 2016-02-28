@@ -62,7 +62,7 @@
 (when *is-a-mac*
   (custom-set-variables
    '(cfs--current-profile-name "mac" t)
-   '(cfs--fontsize-steps (quote (6 4 4)) t)))
+   '(cfs--fontsize-steps (quote (7 4 4)) t)))
 
 
 (when *is-a-win*
@@ -81,16 +81,6 @@
 
 (load-theme 'zenburn t)
 
-;(setq solarized-termcolors 16)
-;(setq solarized-broken-srgb t)
-;(load-theme 'solarized t)
-;(set-frame-parameter nil 'background-mode 'dark)
-;(set-terminal-parameter nil 'background-mode 'dark)
-;(enable-theme 'solarized)
-
-;(require 'color-theme-sanityinc-tomorrow)
-;(load-theme 'sanityinc-tomorrow-night t)
-
 ;;----------------------------------------------------------------------------
 ;; style of the buffer
 ;;----------------------------------------------------------------------------
@@ -100,7 +90,7 @@
 (setq line-number-mode t)
 (global-linum-mode 1)
 (setq gnus-inhibit-startup-message t) 
-(setq initial-frame-alist '((width . 60) (height . 30)))
+(setq initial-frame-alist '((width . 120) (height . 90)))
 (setq track-eol t)
 (display-time-mode t)
 (setq display-time-24hr-format t)
