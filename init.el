@@ -11,6 +11,7 @@
 (defconst *spell-check-support-enabled* nil) ;; Enable with t if you prefer
 (defconst *is-a-mac* (eq system-type 'darwin))
 (defconst *is-a-win* (eq system-type 'windows-nt))
+(defconst *is-a-linux* (eq system-type 'gnu/linux))
 
 ;;----------------------------------------------------------------------------
 ;; set directories
@@ -25,6 +26,11 @@
   (setq path "/opt/local/bin:/opt/local/sbin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin")
   (setenv "PATH" path)
 ;  (setq command-line-default-directory "~/work/")
+  (setq default-directory "~/work/")
+  (add-to-list 'load-path "/opt/local/share/emacs/site-lisp/")
+  (defvar base-path "~/.emacs.d"))
+
+(when *is-a-linux*
   (setq default-directory "~/work/")
   (add-to-list 'load-path "/opt/local/share/emacs/site-lisp/")
   (defvar base-path "~/.emacs.d"))
