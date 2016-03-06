@@ -32,8 +32,8 @@
 
 (when *is-a-linux*
   (setq default-directory "~/work/")
-  (add-to-list 'load-path "/opt/local/share/emacs/site-lisp/")
   (defvar base-path "~/.emacs.d"))
+
 
 (defvar lisp-path (concat base-path "/lisp"))
 (defvar plugin-path (concat base-path "/plugins"))
@@ -78,7 +78,7 @@
 (when *is-a-linux*
 (custom-set-variables
    '(cfs--current-profile-name "linux" t)
-   '(cfs--fontsize-steps (quote (7 4 5)) t)))
+   '(cfs--fontsize-steps (quote (7 4 4)) t)))
 
 
 
@@ -271,6 +271,7 @@
 (require 'server)
 (unless (server-running-p)
   (server-start))
+
 
 
 ;; Local Variables:
