@@ -4,8 +4,8 @@
 ;;; `cfs-insert-fontname’ 来选择一个 *可用* 字体，然后在当前光标处插入其字体名称。
 (setq cfs--custom-set-fontnames
       '(
-        ("Monaco")
-        ("Hiragino Sans GB")
+        ("Monaco" "Consolas" "DejaVu Sans Mono" "Droid Sans Mono" "PragmataPro" "Courier" "Courier New" "Liberation Mono" "Ubuntu Mono" "Droid Sans Mono Pro" "Inconsolata" "Source Code Pro" "Lucida Console" "Envy Code R" "Andale Mono" "Lucida Sans Typewriter" "monoOne" "Lucida Typewriter" "Panic Sans" "Hack" "Bitstream Vera Sans Mono" "HyperFont" "PT Mono" "Ti92Pluspc" "Excalibur Monospace" "Menlof" "Cousine" "Fira Mono" "Lekton" "M+ 1mn" "BPmono" "Free Mono" "Anonymous Pro" "ProFont" "ProFontWindows" "Latin Modern Mono" "Code 2002" "ProggyCleanTT" "ProggyTinyTT")
+        ("微软雅黑" "Hiragino Sans GB" "冬青黑体简体中文" "文泉驿等宽微米黑" "Microsoft Yahei" "Microsoft_Yahei" "文泉驿等宽正黑" "黑体" "文泉驿正黑" "文泉驿点阵正黑" "SimHei" "SimSun" "NSimSun" "FangSong" "KaiTi" "FangSong_GB2312" "KaiTi_GB2312" "LiSu" "YouYuan" "新宋体" "宋体" "楷体_GB2312" "仿宋_GB2312" "幼圆" "隶书" "STXihei" "STKaiti" "STSong" "STZhongsong" "STFangsong" "FZShuTi" "FZYaoti" "STCaiyun" "STHupo" "STLiti" "STXingkai" "STXinwei" "方正姚体" "方正舒体" "方正粗圆_GBK" "华文仿宋" "华文中宋" "华文彩云" "华文新魏" "华文细黑" "华文行楷")
         ("HanaMinB")
        ))
 
@@ -16,12 +16,11 @@
       '(
         (9    10.5 10.5)
         (10   12.5 12.5)
-        (11.5 14.0 14.0)
+        (11.5 18.0 14.0)
         (12.5 15.0 15.0)
         (14   16.5 16.5)
         (16   20.0 20.0)
-        (18   22.0 22.0)
+        (18   21.0 21.0)
         (20   24.0 24.0)
         (22   26.0 26.0)
        ))
-
