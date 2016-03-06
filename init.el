@@ -75,6 +75,11 @@
    '(cfs--current-profile-name "win" t)
    '(cfs--fontsize-steps (quote (4 4 4)) t)))
 
+(when *is-a-linux*
+(custom-set-variables
+   '(cfs--current-profile-name "linux" t)
+   '(cfs--fontsize-steps (quote (7 4 5)) t)))
+
 
 
 (global-font-lock-mode t) 
@@ -266,6 +271,7 @@
 (require 'server)
 (unless (server-running-p)
   (server-start))
+
 
 ;; Local Variables:
 ;; coding: utf-8
