@@ -4,7 +4,7 @@
 ;;; `cfs-insert-fontname’ 来选择一个 *可用* 字体，然后在当前光标处插入其字体名称。
 (setq cfs--custom-set-fontnames
       '(
-        ("Monaco")
+        ("DejaVu Sans Mono")
         ("Microsoft Yahei")
         ("HanaMinB")
        ))
