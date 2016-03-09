@@ -31,6 +31,9 @@
   (defvar base-path "~/.emacs.d"))
 
 (when *is-a-linux*
+  (setq path "/home/wusenlin/bin:/usr/local/bin:/usr/bin:/bin:/usr/bin/X11:/usr/games")
+  (setenv "PATH" path)
+  (setq command-line-default-directory "~/work/")
   (setq default-directory "~/work/")
   (defvar base-path "~/.emacs.d"))
 
@@ -182,6 +185,27 @@
    '(preview-auto-cache-preamble nil)
    '(preview-scale-function 1.3)
    '(preview-transparent-color nil)))
+
+(when *is-a-linux*
+  (add-hook 'LaTeX-mode-hook '(lambda ()
+				(add-to-list 'TeX-expand-list
+					     '("%u" Okular-make-url))))
+  (defun Okular-make-url () (concat
+			     "file://"
+			     (expand-file-name (funcall file (TeX-output-extension) t)
+					       (file-name-directory (TeX-master-file)))
+			     "#src:"
+			     (TeX-current-line)
+			     (expand-file-name (TeX-master-directory))
+			     "./"
+			     (TeX-current-file-name-master-relative)))
+  (setq TeX-view-program-list
+      '(("Okular"
+	 ("okular --unique %u"))))
+  (setq TeX-view-program-selection '((output-pdf "Okular"))))
+
+
+
 
 ;;----------------------------------------------------------------------------
 ;; more hooks
