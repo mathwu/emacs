@@ -5,7 +5,7 @@
 (setq cfs--custom-set-fontnames
       '(
         ("Monaco" "Inziu Iosevka TC" "Inziu Iosevka CL" "DejaVu Sans Mono")
-        ("Inziu Roboto TC" "Inziu Iosevka TC" "Inziu Iosevka CL" "微软雅黑" "Microsoft Yahei" "Hiragino Sans GB" "Microsoft_Yahei")
+        ("Inziu Iosevka Slab TC" "Inziu Roboto TC" "Inziu Iosevka TC" "Inziu Iosevka CL" "微软雅黑" "Hiragino Sans GB"  "Microsoft Yahei" "Microsoft_Yahei")
         ("HanaMinB")
        ))
 
