@@ -5,7 +5,7 @@
 (setq cfs--custom-set-fontnames
       '(
         ("Inconsolata" "Monaco" "Inziu Iosevka TC" "Inziu Iosevka CL" "DejaVu Sans Mono")
-        ("微软雅黑" "Inziu Iosevka Slab TC" "Inziu Roboto TC" "Inziu Iosevka TC" "Inziu Iosevka CL" "微软雅黑" "Hiragino Sans GB"  "Microsoft Yahei" "Microsoft_Yahei")
+        ("微软雅黑" "Inziu Iosevka Slab TC" "Hiragino Sans GB" "Inziu Roboto TC" "Inziu Iosevka TC" "Inziu Iosevka CL" "微软雅黑" "Microsoft Yahei" "Microsoft_Yahei")
         ("HanaMinB")
        ))
 
@@ -14,9 +14,9 @@
 ;;; 按 C-<up> 增大光标处字号，按 C-<down> 减小光标处字号。
 (setq cfs--custom-set-fontsizes
       '(
-        (9    9 9)
-        (10   11.5 11.5)
-        (11.5 13.0 13.0)
+        (9    10 10)
+        (10   11 11)
+        (11.5 12.5 12.5)
         (12.5 13.5 13.5)
         (14   15 15)
         (16   17 17)

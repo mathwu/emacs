@@ -82,7 +82,7 @@
  (when *is-a-linux*
  (custom-set-variables
     '(cfs--current-profile-name "linux" t)
-    '(cfs--fontsize-steps (quote (8 4 4)) t)))
+    '(cfs--fontsize-steps (quote (8 4 3)) t)))
 
 
 
@@ -296,6 +296,7 @@
 (require 'server)
 (unless (server-running-p)
   (server-start))
+
 
 
 ;; Local Variables:
