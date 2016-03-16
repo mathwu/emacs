@@ -4,8 +4,8 @@
 ;;; `cfs-insert-fontname’ 来选择一个 *可用* 字体，然后在当前光标处插入其字体名称。
 (setq cfs--custom-set-fontnames
       '(
-        ("Monaco" "Inziu Iosevka TC" "Inziu Iosevka CL" "DejaVu Sans Mono")
-        ("Inziu Iosevka Slab TC" "Inziu Roboto TC" "Inziu Iosevka TC" "Inziu Iosevka CL" "微软雅黑" "Hiragino Sans GB"  "Microsoft Yahei" "Microsoft_Yahei")
+        ("Inconsolata" "Monaco" "Inziu Iosevka TC" "Inziu Iosevka CL" "DejaVu Sans Mono")
+        ("微软雅黑" "Inziu Iosevka Slab TC" "Inziu Roboto TC" "Inziu Iosevka TC" "Inziu Iosevka CL" "微软雅黑" "Hiragino Sans GB"  "Microsoft Yahei" "Microsoft_Yahei")
         ("HanaMinB")
        ))
 
@@ -14,13 +14,13 @@
 ;;; 按 C-<up> 增大光标处字号，按 C-<down> 减小光标处字号。
 (setq cfs--custom-set-fontsizes
       '(
-        (9    10.5 10.5)
-        (10   12.5 12.5)
-        (11.5 14.0 14.0)
-        (12.5 15.0 15.0)
-        (14   16.5 16.5)
-        (16   20.0 20.0)
-        (18   21.0 21.0)
-        (20   24.0 24.0)
-        (22   26.0 26.0)
+        (9    9 9)
+        (10   11.5 11.5)
+        (11.5 13.0 13.0)
+        (12.5 13.5 13.5)
+        (14   15 15)
+        (16   17 17)
+        (18   18.5 18.5)
+        (20   21 21)
+        (22   23 23)
        ))
